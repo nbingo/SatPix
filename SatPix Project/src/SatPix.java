@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * @author Nomi Ringach
+ * @since Oct 13, 2015
+ */
 public class SatPix {
 
 	public static void main(String[] args) throws IOException
@@ -46,6 +50,13 @@ public class SatPix {
 		return arr;
 	}
 
+	/**
+	 * @author Nomi Ringach
+	 * @param row The row in which to check.
+	 * @param col The column in which to check.
+	 * @param arr The boolean array.
+	 * @return The size of the pasture so far.
+	 */
 	private static int recursivelyMeasureAndMarkPasture(int row, int col, boolean[][] arr)
 	{
 		if (row < arr.length && row > -1 && col < arr[0].length && col > -1 && arr[row][col])
