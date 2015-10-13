@@ -56,6 +56,7 @@ public class SatPix {
 	 * @param col The column in which to check.
 	 * @param arr The boolean array.
 	 * @return The size of the pasture so far.
+	 * @since Oct 13, 2015
 	 */
 	private static int recursivelyMeasureAndMarkPasture(int row, int col, boolean[][] arr)
 	{
