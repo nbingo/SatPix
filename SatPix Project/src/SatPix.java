@@ -60,7 +60,11 @@ public class SatPix {
 	 */
 	private static int recursivelyMeasureAndMarkPasture(int row, int col, boolean[][] arr)
 	{
-		if (row < arr.length && row > -1 && col < arr[0].length && col > -1 && arr[row][col])
+		if (row < arr.length 		&& 
+				row > -1 			&& 
+				col < arr[0].length && 
+				col > -1 			&& 
+				arr[row][col])
 		{
 			arr[row][col] = false;
 			return 1 + 
