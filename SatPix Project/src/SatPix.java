@@ -11,8 +11,12 @@ import java.util.Scanner;
  * @since Oct 13, 2015
  */
 public class SatPix {
-
-	public static void main(String[] args) throws IOException
+	/**
+	 * 
+	 * @throws IOException If there's a problem with {@link java.io.FileWriter FileWriter} or {@link java.io.BufferedWriter BufferedWriter} 
+	 * or {@link java.io.PrintWriter PrintWriter}, but especially when using {@link java.io.PrintWriter#println(int) PrintWriter.println()}.
+	 */
+	public static void main() throws IOException
 	{
 		boolean[][] booleanArr = fileToBoolArray("bigPicture2.txt");
 		int sizeOfLargestPasture = 0, temp = 0;
