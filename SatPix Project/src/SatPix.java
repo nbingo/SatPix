@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class SatPix {
 	/**
-	 * 
+	 * @author Nomi Ringach
 	 * @throws IOException If there's a problem with {@link java.io.FileWriter FileWriter} or {@link java.io.BufferedWriter BufferedWriter} 
 	 * or {@link java.io.PrintWriter PrintWriter}, but especially when using {@link java.io.PrintWriter#println(int) PrintWriter.println()}.
 	 */
