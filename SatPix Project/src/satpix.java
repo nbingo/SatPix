@@ -10,15 +10,15 @@ import java.util.Scanner;
  * @author Nomi Ringach
  * @since Oct 13, 2015
  */
-public class SatPix {
+public class satpix {
 	/**
 	 * @author Nomi Ringach
 	 * @throws IOException If there's a problem with {@link java.io.FileWriter FileWriter} or {@link java.io.BufferedWriter BufferedWriter} 
 	 * or {@link java.io.PrintWriter PrintWriter}, but especially when using {@link java.io.PrintWriter#println(int) PrintWriter.println()}.
 	 */
-	public static void main() throws IOException
+	public static void runSatPix(String inputFileName, String outputFileName) throws IOException
 	{
-		boolean[][] booleanArr = fileToBoolArray("bigPicture2.txt");
+		boolean[][] booleanArr = fileToBoolArray(inputFileName);
 		int sizeOfLargestPasture = 0, temp = 0;
 		
 		for (int row = 0; row < booleanArr.length; row++)
@@ -26,7 +26,7 @@ public class SatPix {
 				if ((temp = recursivelyMeasureAndMarkPasture(row, col, booleanArr)) > sizeOfLargestPasture)
 					sizeOfLargestPasture = temp;
 
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("bigPictureOut3.txt")));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFileName)));
 		out.println(sizeOfLargestPasture);
 		System.out.println(sizeOfLargestPasture);
 		out.close();
