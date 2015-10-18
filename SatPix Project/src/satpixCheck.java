@@ -13,8 +13,9 @@ public class satpixCheck {
 	        for (int x = 0; x < 5; x++)
 	        {
 	        	satpix.runSatPix(inputFileNames[x], outputFileNames[x]);
-	        	Scanner scanner = new Scanner(new File(outputFileNames[x]));
-	        	System.out.println(inputFileNames[x] + ": " + scanner.nextInt());
+	        	Scanner s = new Scanner(new File(outputFileNames[x]));
+	        	System.out.println(inputFileNames[x] + ": " + s.nextInt());
+	        	s.close();
 	        }
         }
     	catch (Exception ex)
@@ -23,7 +24,6 @@ public class satpixCheck {
     	}
         long endTime = System.currentTimeMillis();
         System.out.println("YOUR SCORE: "+ (10000 - (endTime - startTime)));
-       
     	System.exit(0);
     }
     	
