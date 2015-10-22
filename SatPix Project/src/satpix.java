@@ -18,19 +18,27 @@ public class satpix {
 	 */
 	public static void runSatPix(String inputFileName, String outputFileName) throws IOException
 	{
-		boolean[][] booleanArr = fileToBoolArray(inputFileName);
-		int sizeOfLargestPasture = 0, temp = 0;
-		
-		for (int row = 0; row < booleanArr.length; row++)
-			for (int col = 0; col < booleanArr[0].length; col++)
-				if ((temp = recursivelyMeasureAndMarkPasture(row, col, booleanArr)) > sizeOfLargestPasture)
-					sizeOfLargestPasture = temp;
-
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFileName)));
-		out.println(sizeOfLargestPasture);
-		System.out.println(sizeOfLargestPasture);
-		out.close();
+		try
+		{
+			boolean[][] booleanArr = fileToBoolArray(inputFileName);
+			int sizeOfLargestPasture = 0, temp = 0;
+			
+			for (int row = 0; row < booleanArr.length; row++)
+				for (int col = 0; col < booleanArr[0].length; col++)
+					if ((temp = recursivelyMeasureAndMarkPasture(row, col, booleanArr)) > sizeOfLargestPasture)
+						sizeOfLargestPasture = temp;
+	
+			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFileName)));
+			out.println(sizeOfLargestPasture);
+			System.out.println(sizeOfLargestPasture);
+			out.close();
 		}
+		catch (Exception ex)
+		{
+			System.out.println (ex.getMessage());
+			System.exit(0);
+		}
+	}
 	/**
 	 * @param fileName The name of the file with the pasture.
 	 * @return A 2D boolean array with all of the '*' turned to true and all of the '.' turned to false.
